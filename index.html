@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQUAD PROFILE</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #ff3c3c;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    input {
+      padding: 10px;
+      font-size: 16px;
+      width: 80%;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 6px;
+      background: #222;
+      color: #fff;
+    }
+    .stats {
+      width: 100%;
+      text-align: left;
+      background: #1c1c1c;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .stat-item {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    button {
+      padding: 12px 24px;
+      background-color: #ff3c3c;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>SQUAD PROFILE</h1>
+  <input type="text" id="nickname" placeholder="Введи свой ник" />
+  <div class="stats">
+    <div class="stat-item">🔹 Просмотров за месяц: <span id="views">9999</span></div>
+    <div class="stat-item">❤️ Реакций за месяц: <span id="reactions">666</span></div>
+    <div class="stat-item">🔥 Поддержек: <span id="support">0</span></div>
+  </div>
+  <button onclick="supportUs()">Поддержать</button>
+  <script>
+    Telegram.WebApp.ready();
+    let supportCount = 0;
+    function supportUs() {
+      supportCount++;
+      document.getElementById('support').innerText = supportCount;
+    }
+  </script>
+</body>
+</html>
